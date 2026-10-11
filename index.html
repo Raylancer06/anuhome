@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ANUKUL Clinic — 5 Homepage Design Concepts Presentation</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            vedic: {
+              gold: '#B38A3E',
+              goldLight: '#DFBE7B',
+              forest: '#1F4D3A',
+              forestDark: '#0E291F',
+              forestBlack: '#081B15',
+              terracotta: '#C66A22',
+              maroon: '#7A2638',
+              parchment: '#F7F1E3',
+              sandstone: '#E8D8BC',
+              darkCard: '#0D261E',
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'EB Garamond', 'serif'],
+            serif: ['EB Garamond', 'serif'],
+            sans: ['Manrope', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Custom Scrollbar & Aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #F7F1E3;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #B38A3E;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1F4D3A;
+    }
+
+    /* Mockup Frame & Smooth Hover Scroll Dynamics */
+    .preview-viewport {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+      background: #F4EEE3;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .iframe-scaler {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1440px;
+      height: 5200px;
+      transform-origin: top left;
+      will-change: transform;
+      pointer-events: none;
+      transition: transform var(--scroll-duration, 8.5s) cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* Hover state for Auto-Glide */
+    .concept-card:not(.manual-mode):hover .iframe-scaler {
+      transform: scale(var(--card-scale, 0.28)) translateY(var(--max-scroll-y, -3600px));
+    }
+
+    /* Smooth recovery when unhovered */
+    .concept-card:not(.manual-mode) .iframe-scaler {
+      transition: transform var(--return-duration, 1.8s) cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Card Glow on Hover */
+    .concept-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .concept-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px -12px rgba(31, 77, 58, 0.16), 0 0 0 1px rgba(179, 138, 62, 0.3);
+    }
+
+    /* Subtle Animated Shimmer for Badges */
+    @keyframes pulseGold {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.04); }
+    }
+    .pulse-badge {
+      animation: pulseGold 2.4s infinite ease-in-out;
+    }
+
+    /* Device Previewer Frames */
+    .device-screen-wrapper {
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  </style>
+</head>
+
+<body class="bg-[#F7F1E3] text-[#2E2924] font-sans antialiased selection:bg-[#1F4D3A] selection:text-[#F7F1E3] min-h-screen flex flex-col">
+
+  <!-- TOP CLIENT PRESENTATION HEADER -->
+  <header class="sticky top-0 z-50 bg-[#F7F1E3]/95 backdrop-blur-md border-b border-[#B38A3E]/30 shadow-sm transition-all">
+    <div class="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand & Project Title -->
+      <div class="flex items-center gap-4">
+        <div class="w-11 h-11 rounded-lg bg-[#1F4D3A] text-[#F7F1E3] flex items-center justify-center font-display font-bold text-xl shadow-md border border-[#B38A3E]/40">
+          A
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-display font-semibold text-lg text-[#1F4D3A] tracking-tight">ANUKUL</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-[#B38A3E]/15 text-[#B38A3E] font-semibold border border-[#B38A3E]/30 uppercase tracking-widest">Client Review</span>
+          </div>
+          <p class="text-xs text-[#2E2924]/70 font-medium">Ayur Vāstu Harmony Clinic • 5 Concept Explorations</p>
+        </div>
+      </div>
+
+      <!-- Center Presentation Quick Controls -->
+      <div class="hidden xl:flex items-center gap-3 bg-[#E8D8BC]/50 px-3 py-1.5 rounded-full border border-[#B38A3E]/20 text-xs font-semibold">
+        <span class="text-[#1F4D3A] flex items-center gap-1 pl-1">
+          <span class="material-symbols-outlined text-sm text-[#B38A3E]">speed</span> Hover Speed:
+        </span>
+        <button class="speed-btn px-2.5 py-1 rounded-full text-[#2E2924]/80 hover:text-[#1F4D3A] transition-colors" data-speed="0.7">Slow</button>
+        <button class="speed-btn px-2.5 py-1 rounded-full bg-[#1F4D3A] text-[#F7F1E3] shadow-sm transition-colors" data-speed="1.0">Normal</button>
+        <button class="speed-btn px-2.5 py-1 rounded-full text-[#2E2924]/80 hover:text-[#1F4D3A] transition-colors" data-speed="1.6">Fast</button>
+        <span class="h-3 w-[1px] bg-[#B38A3E]/30 mx-1"></span>
+        <button id="mode-toggle-btn" class="flex items-center gap-1 text-[#2E2924]/80 hover:text-[#1F4D3A] px-2 py-1 rounded-full transition-colors" title="Toggle between auto-scroll and cursor-follow scrub">
+          <span class="material-symbols-outlined text-sm text-[#C66A22]">autorenew</span> Auto-Glide Mode
+        </button>
+      </div>
+
+      <!-- Actions: Compare, Quick Jump, Full Modal -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Quick Jump Dropdown -->
+        <div class="relative">
+          <select id="quick-jump-select" onchange="jumpToConcept(this.value)" class="text-xs font-semibold bg-[#E8D8BC]/60 border border-[#B38A3E]/30 text-[#1F4D3A] rounded-lg px-3 py-2 pr-7 outline-none hover:bg-[#E8D8BC] cursor-pointer transition-colors">
+            <option value="">Jump to Concept...</option>
+            <option value="concept-1">Concept 1: Architectural Grid</option>
+            <option value="concept-2">Concept 2: Centered Sanctuary</option>
+            <option value="concept-3">Concept 3: Monastic Balance</option>
+            <option value="concept-4">Concept 4: Overlapping Monograph</option>
+            <option value="concept-5">Concept 5: Luxury Nocturnal Gold</option>
+          </select>
+        </div>
+
+        <!-- Compare Button -->
+        <button onclick="openCompareModal()" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider bg-[#B38A3E] hover:bg-[#974800] text-[#F7F1E3] px-3.5 py-2 rounded-lg shadow-sm transition-colors">
+          <span class="material-symbols-outlined text-[16px]">compare</span>
+          <span class="hidden sm:inline">Compare</span>
+        </button>
+
+        <!-- Live Device Previewer Button -->
+        <button onclick="openDeviceModal('home1.html', 'Concept 1')" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] px-4 py-2 rounded-lg shadow-sm transition-colors">
+          <span class="material-symbols-outlined text-[16px]">devices</span>
+          <span>Device Hub</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN PRESENTATION BODY -->
+  <main class="flex-grow max-w-[1520px] w-full mx-auto px-4 sm:px-6 lg:px-10 py-10 space-y-12">
+
+    <!-- HERO PRESENTATION MONOGRAPH -->
+    <section class="relative bg-gradient-to-br from-[#FAF7F0] via-[#F7F1E3] to-[#E8D8BC]/50 rounded-2xl p-8 sm:p-12 border border-[#B38A3E]/35 shadow-sm overflow-hidden">
+      <!-- Decorative Vedic corner motifs -->
+      <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#B38A3E]/10 to-transparent pointer-events-none rounded-bl-full"></div>
+      <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-gradient-to-tr from-[#1F4D3A]/5 to-transparent pointer-events-none rounded-tr-full"></div>
+
+      <div class="max-w-4xl relative z-10 space-y-5">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1 rounded-full bg-[#1F4D3A]/10 border border-[#1F4D3A]/20 text-[#1F4D3A] text-xs font-bold uppercase tracking-widest">
+          <span class="w-2 h-2 rounded-full bg-[#C66A22] animate-ping"></span>
+          Interactive Concept Portfolio Showcase
+        </div>
+
+        <h1 class="font-display text-3xl sm:text-5xl lg:text-5xl text-[#1F4D3A] leading-[1.12] tracking-tight">
+          Vedic Architecture &amp; Ayurvedic Harmony:<br />
+          <span class="italic font-normal text-[#C66A22]">5 Bespoke Design Directions for Client Review</span>
+        </h1>
+
+        <p class="text-[#2E2924]/85 text-base sm:text-lg leading-relaxed max-w-3xl">
+          Each concept interprets the ANUKUL ethos through a distinctive architectural layout, typographic personality, and spatial rhythm. Hover over any design card below to trigger the <strong>smooth auto-scrolling preview</strong>. Click any card to launch the <strong>responsive device simulator</strong> or open the full live page.
+        </p>
+
+        <!-- Feature Pills -->
+        <div class="pt-2 flex flex-wrap items-center gap-3 text-xs font-semibold text-[#1F4D3A]">
+          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/70 border border-[#B38A3E]/30 shadow-xs">
+            <span class="material-symbols-outlined text-[#B38A3E] text-base">mouse</span> Hover to Auto-Scroll Page
+          </span>
+          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/70 border border-[#B38A3E]/30 shadow-xs">
+            <span class="material-symbols-outlined text-[#1F4D3A] text-base">devices</span> Responsive Desktop, Tablet &amp; Mobile
+          </span>
+          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/70 border border-[#B38A3E]/30 shadow-xs">
+            <span class="material-symbols-outlined text-[#C66A22] text-base">compare_arrows</span> Side-by-Side Dual Comparison
+          </span>
+          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/70 border border-[#B38A3E]/30 shadow-xs">
+            <span class="material-symbols-outlined text-[#7A2638] text-base">cloud_done</span> Ready for 1-Click Vercel Deployment
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER & VIEW CONTROLS -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-b border-[#B38A3E]/20 pb-5">
+      <div class="flex items-center gap-2">
+        <span class="font-display text-2xl text-[#1F4D3A] font-semibold">Homepage Concepts</span>
+        <span class="text-xs font-bold px-2 py-0.5 rounded-full bg-[#1F4D3A] text-[#F7F1E3]">5 Designs</span>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs text-[#2E2924]/70 mr-1 font-medium">Layout Grid:</span>
+        <button onclick="setLayoutColumns('grid-cols-1 md:grid-cols-2 lg:grid-cols-3')" id="col-3-btn" class="layout-toggle px-3 py-1.5 rounded-lg bg-[#1F4D3A] text-[#F7F1E3] text-xs font-semibold shadow-xs flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">grid_view</span> 3 Cards
+        </button>
+        <button onclick="setLayoutColumns('grid-cols-1 md:grid-cols-2')" id="col-2-btn" class="layout-toggle px-3 py-1.5 rounded-lg bg-[#E8D8BC]/60 hover:bg-[#E8D8BC] text-[#1F4D3A] text-xs font-semibold flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">view_column</span> 2 Large
+        </button>
+        <button onclick="setLayoutColumns('grid-cols-1 max-w-4xl mx-auto')" id="col-1-btn" class="layout-toggle px-3 py-1.5 rounded-lg bg-[#E8D8BC]/60 hover:bg-[#E8D8BC] text-[#1F4D3A] text-xs font-semibold flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">view_stream</span> Focus
+        </button>
+      </div>
+    </div>
+
+    <!-- CONCEPTS GRID -->
+    <div id="concepts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ================= CONCEPT 1 ================= -->
+      <article id="concept-1" class="concept-card flex flex-col bg-[#FDFBF7] rounded-xl border border-[#B38A3E]/30 shadow-md overflow-hidden group">
+        <!-- Mockup Browser Header -->
+        <div class="px-4 py-2.5 bg-[#EFE7D8] border-b border-[#B38A3E]/25 flex items-center justify-between gap-2 select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#E05A47] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#E5B53B] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#57B855] inline-block"></span>
+          </div>
+          <div class="flex-grow max-w-[210px] bg-[#F7F1E3] border border-[#B38A3E]/20 rounded-md px-2.5 py-0.5 text-[11px] text-[#2E2924]/70 font-mono truncate text-center flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[11px] text-[#1F4D3A]">lock</span> anukulclinic.com/concept-1
+          </div>
+          <span class="text-[11px] font-bold text-[#1F4D3A] uppercase tracking-wider">Concept 01</span>
+        </div>
+
+        <!-- Preview Viewport with Hover-to-Scroll -->
+        <div class="preview-viewport relative group/screen" onclick="openDeviceModal('home1.html', 'Concept 1: Architectural Grid')">
+          <div class="iframe-scaler" data-src="home1.html">
+            <iframe src="home1.html" class="w-full h-full border-none" tabindex="-1" loading="lazy"></iframe>
+          </div>
+
+          <!-- Hover Overlay Indicators -->
+          <div class="absolute inset-0 bg-transparent group-hover/screen:bg-[#1F4D3A]/5 transition-colors pointer-events-none"></div>
+
+          <!-- Dynamic Badge: Hover to Scroll / Progress -->
+          <div class="hover-scroll-badge absolute top-3 right-3 bg-[#1F4D3A]/90 backdrop-blur-md text-[#F7F1E3] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#B38A3E]/40 flex items-center gap-1.5 shadow-sm transition-all pointer-events-none">
+            <span class="material-symbols-outlined text-xs text-[#DFBE7B] animate-bounce">arrow_downward</span>
+            <span class="badge-text">Hover to Scroll</span>
+          </div>
+
+          <!-- Quick Action Hover Bar at Center Bottom -->
+          <div class="absolute bottom-3 inset-x-3 opacity-0 group-hover/screen:opacity-100 transition-opacity flex items-center justify-center gap-2 pointer-events-auto">
+            <button onclick="event.stopPropagation(); openDeviceModal('home1.html', 'Concept 1: Architectural Grid')" class="bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">devices</span> Device Preview
+            </button>
+            <a href="home1.html" target="_blank" onclick="event.stopPropagation();" class="bg-[#B38A3E] hover:bg-[#974800] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">open_in_new</span> Full Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Concept Details Footer -->
+        <div class="p-5 flex flex-col justify-between flex-grow space-y-4 border-t border-[#B38A3E]/20 bg-[#FAF6EE]">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#C66A22] uppercase tracking-widest">Architectural Monograph</span>
+              <div class="flex items-center gap-1">
+                <span class="w-3 h-3 rounded-full bg-[#F7F1E3] border border-[#B38A3E]/40" title="Parchment #F7F1E3"></span>
+                <span class="w-3 h-3 rounded-full bg-[#1F4D3A]" title="Forest #1F4D3A"></span>
+                <span class="w-3 h-3 rounded-full bg-[#B38A3E]" title="Vedic Gold #B38A3E"></span>
+                <span class="w-3 h-3 rounded-full bg-[#C66A22]" title="Terracotta #C66A22"></span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl text-[#1F4D3A] font-semibold leading-tight">
+              Architectural Grid &amp; Vedic Biology
+            </h3>
+
+            <p class="text-xs text-[#2E2924]/80 leading-relaxed">
+              Classical split-screen hero layout with authentic Sanskrit architectural drafting grid, Vedic biology diagnostic overview, and framed courtyard imagery.
+            </p>
+          </div>
+
+          <!-- Tags & Action Bar -->
+          <div class="pt-2 border-t border-[#B38A3E]/15 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-[#2E2924]/60 font-mono">EB Garamond • Manrope</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setCompareLeft('home1.html', 'Concept 1')" class="text-xs text-[#1F4D3A] hover:text-[#B38A3E] font-semibold px-2 py-1 rounded border border-[#B38A3E]/30 hover:border-[#B38A3E] transition-colors" title="Add to comparison">
+                ⚖ Compare
+              </button>
+              <a href="home1.html" class="text-xs bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] font-semibold px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                Explore <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= CONCEPT 2 ================= -->
+      <article id="concept-2" class="concept-card flex flex-col bg-[#FDFBF7] rounded-xl border border-[#B38A3E]/30 shadow-md overflow-hidden group">
+        <!-- Mockup Browser Header -->
+        <div class="px-4 py-2.5 bg-[#EFE7D8] border-b border-[#B38A3E]/25 flex items-center justify-between gap-2 select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#E05A47] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#E5B53B] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#57B855] inline-block"></span>
+          </div>
+          <div class="flex-grow max-w-[210px] bg-[#F7F1E3] border border-[#B38A3E]/20 rounded-md px-2.5 py-0.5 text-[11px] text-[#2E2924]/70 font-mono truncate text-center flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[11px] text-[#1F4D3A]">lock</span> anukulclinic.com/concept-2
+          </div>
+          <span class="text-[11px] font-bold text-[#1F4D3A] uppercase tracking-wider">Concept 02</span>
+        </div>
+
+        <!-- Preview Viewport with Hover-to-Scroll -->
+        <div class="preview-viewport relative group/screen" onclick="openDeviceModal('home2.html', 'Concept 2: Centered Majestic Sanctuary')">
+          <div class="iframe-scaler" data-src="home2.html">
+            <iframe src="home2.html" class="w-full h-full border-none" tabindex="-1" loading="lazy"></iframe>
+          </div>
+
+          <!-- Hover Overlay Indicators -->
+          <div class="absolute inset-0 bg-transparent group-hover/screen:bg-[#1F4D3A]/5 transition-colors pointer-events-none"></div>
+
+          <!-- Dynamic Badge: Hover to Scroll / Progress -->
+          <div class="hover-scroll-badge absolute top-3 right-3 bg-[#1F4D3A]/90 backdrop-blur-md text-[#F7F1E3] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#B38A3E]/40 flex items-center gap-1.5 shadow-sm transition-all pointer-events-none">
+            <span class="material-symbols-outlined text-xs text-[#DFBE7B] animate-bounce">arrow_downward</span>
+            <span class="badge-text">Hover to Scroll</span>
+          </div>
+
+          <!-- Quick Action Hover Bar at Center Bottom -->
+          <div class="absolute bottom-3 inset-x-3 opacity-0 group-hover/screen:opacity-100 transition-opacity flex items-center justify-center gap-2 pointer-events-auto">
+            <button onclick="event.stopPropagation(); openDeviceModal('home2.html', 'Concept 2: Centered Majestic Sanctuary')" class="bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">devices</span> Device Preview
+            </button>
+            <a href="home2.html" target="_blank" onclick="event.stopPropagation();" class="bg-[#B38A3E] hover:bg-[#974800] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">open_in_new</span> Full Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Concept Details Footer -->
+        <div class="p-5 flex flex-col justify-between flex-grow space-y-4 border-t border-[#B38A3E]/20 bg-[#FAF6EE]">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#974800] uppercase tracking-widest">Symmetric Sanctuary</span>
+              <div class="flex items-center gap-1">
+                <span class="w-3 h-3 rounded-full bg-[#F7F1E3] border border-[#B38A3E]/40" title="Parchment #F7F1E3"></span>
+                <span class="w-3 h-3 rounded-full bg-[#023625]" title="Deep Moss #023625"></span>
+                <span class="w-3 h-3 rounded-full bg-[#B38A3E]" title="Vedic Gold #B38A3E"></span>
+                <span class="w-3 h-3 rounded-full bg-[#974800]" title="Ochre #974800"></span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl text-[#1F4D3A] font-semibold leading-tight">
+              Centered Majestic Sanctuary
+            </h3>
+
+            <p class="text-xs text-[#2E2924]/80 leading-relaxed">
+              Grand centered headline typography, symmetrical sacred geometry balance, flanked by architectural sanctuary pillars and comprehensive diagnostic pathways.
+            </p>
+          </div>
+
+          <!-- Tags & Action Bar -->
+          <div class="pt-2 border-t border-[#B38A3E]/15 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-[#2E2924]/60 font-mono">Grand Display • Symmetry</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setCompareLeft('home2.html', 'Concept 2')" class="text-xs text-[#1F4D3A] hover:text-[#B38A3E] font-semibold px-2 py-1 rounded border border-[#B38A3E]/30 hover:border-[#B38A3E] transition-colors" title="Add to comparison">
+                ⚖ Compare
+              </button>
+              <a href="home2.html" class="text-xs bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] font-semibold px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                Explore <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= CONCEPT 3 ================= -->
+      <article id="concept-3" class="concept-card flex flex-col bg-[#FDFBF7] rounded-xl border border-[#B38A3E]/30 shadow-md overflow-hidden group">
+        <!-- Mockup Browser Header -->
+        <div class="px-4 py-2.5 bg-[#EFE7D8] border-b border-[#B38A3E]/25 flex items-center justify-between gap-2 select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#E05A47] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#E5B53B] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#57B855] inline-block"></span>
+          </div>
+          <div class="flex-grow max-w-[210px] bg-[#F7F1E3] border border-[#B38A3E]/20 rounded-md px-2.5 py-0.5 text-[11px] text-[#2E2924]/70 font-mono truncate text-center flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[11px] text-[#1F4D3A]">lock</span> anukulclinic.com/concept-3
+          </div>
+          <span class="text-[11px] font-bold text-[#1F4D3A] uppercase tracking-wider">Concept 03</span>
+        </div>
+
+        <!-- Preview Viewport with Hover-to-Scroll -->
+        <div class="preview-viewport relative group/screen" onclick="openDeviceModal('home3.html', 'Concept 3: Minimalist Monastic Balance')">
+          <div class="iframe-scaler" data-src="home3.html">
+            <iframe src="home3.html" class="w-full h-full border-none" tabindex="-1" loading="lazy"></iframe>
+          </div>
+
+          <!-- Hover Overlay Indicators -->
+          <div class="absolute inset-0 bg-transparent group-hover/screen:bg-[#1F4D3A]/5 transition-colors pointer-events-none"></div>
+
+          <!-- Dynamic Badge: Hover to Scroll / Progress -->
+          <div class="hover-scroll-badge absolute top-3 right-3 bg-[#1F4D3A]/90 backdrop-blur-md text-[#F7F1E3] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#B38A3E]/40 flex items-center gap-1.5 shadow-sm transition-all pointer-events-none">
+            <span class="material-symbols-outlined text-xs text-[#DFBE7B] animate-bounce">arrow_downward</span>
+            <span class="badge-text">Hover to Scroll</span>
+          </div>
+
+          <!-- Quick Action Hover Bar at Center Bottom -->
+          <div class="absolute bottom-3 inset-x-3 opacity-0 group-hover/screen:opacity-100 transition-opacity flex items-center justify-center gap-2 pointer-events-auto">
+            <button onclick="event.stopPropagation(); openDeviceModal('home3.html', 'Concept 3: Minimalist Monastic Balance')" class="bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">devices</span> Device Preview
+            </button>
+            <a href="home3.html" target="_blank" onclick="event.stopPropagation();" class="bg-[#B38A3E] hover:bg-[#974800] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">open_in_new</span> Full Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Concept Details Footer -->
+        <div class="p-5 flex flex-col justify-between flex-grow space-y-4 border-t border-[#B38A3E]/20 bg-[#FAF6EE]">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#685D47] uppercase tracking-widest">Monastic Serenity</span>
+              <div class="flex items-center gap-1">
+                <span class="w-3 h-3 rounded-full bg-[#FFF8F4] border border-[#B38A3E]/40" title="Warm Surface #FFF8F4"></span>
+                <span class="w-3 h-3 rounded-full bg-[#1F4D3A]" title="Forest #1F4D3A"></span>
+                <span class="w-3 h-3 rounded-full bg-[#685D47]" title="Warm Secondary #685D47"></span>
+                <span class="w-3 h-3 rounded-full bg-[#F1E1C4]" title="Sandstone #F1E1C4"></span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl text-[#1F4D3A] font-semibold leading-tight">
+              Minimalist Monastic Balance
+            </h3>
+
+            <p class="text-xs text-[#2E2924]/80 leading-relaxed">
+              Quiet, generous negative space inspired by sacred monastic retreats. Clean editorial columns, subtle hairline dividers, and calm breathing rhythm.
+            </p>
+          </div>
+
+          <!-- Tags & Action Bar -->
+          <div class="pt-2 border-t border-[#B38A3E]/15 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-[#2E2924]/60 font-mono">Airy Spacing • Calming Flow</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setCompareLeft('home3.html', 'Concept 3')" class="text-xs text-[#1F4D3A] hover:text-[#B38A3E] font-semibold px-2 py-1 rounded border border-[#B38A3E]/30 hover:border-[#B38A3E] transition-colors" title="Add to comparison">
+                ⚖ Compare
+              </button>
+              <a href="home3.html" class="text-xs bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] font-semibold px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                Explore <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= CONCEPT 4 ================= -->
+      <article id="concept-4" class="concept-card flex flex-col bg-[#FDFBF7] rounded-xl border border-[#B38A3E]/30 shadow-md overflow-hidden group">
+        <!-- Mockup Browser Header -->
+        <div class="px-4 py-2.5 bg-[#EFE7D8] border-b border-[#B38A3E]/25 flex items-center justify-between gap-2 select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#E05A47] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#E5B53B] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#57B855] inline-block"></span>
+          </div>
+          <div class="flex-grow max-w-[210px] bg-[#F7F1E3] border border-[#B38A3E]/20 rounded-md px-2.5 py-0.5 text-[11px] text-[#2E2924]/70 font-mono truncate text-center flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[11px] text-[#1F4D3A]">lock</span> anukulclinic.com/concept-4
+          </div>
+          <span class="text-[11px] font-bold text-[#1F4D3A] uppercase tracking-wider">Concept 04</span>
+        </div>
+
+        <!-- Preview Viewport with Hover-to-Scroll -->
+        <div class="preview-viewport relative group/screen" onclick="openDeviceModal('home4.html', 'Concept 4: Architectural Monograph')">
+          <div class="iframe-scaler" data-src="home4.html">
+            <iframe src="home4.html" class="w-full h-full border-none" tabindex="-1" loading="lazy"></iframe>
+          </div>
+
+          <!-- Hover Overlay Indicators -->
+          <div class="absolute inset-0 bg-transparent group-hover/screen:bg-[#1F4D3A]/5 transition-colors pointer-events-none"></div>
+
+          <!-- Dynamic Badge: Hover to Scroll / Progress -->
+          <div class="hover-scroll-badge absolute top-3 right-3 bg-[#1F4D3A]/90 backdrop-blur-md text-[#F7F1E3] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#B38A3E]/40 flex items-center gap-1.5 shadow-sm transition-all pointer-events-none">
+            <span class="material-symbols-outlined text-xs text-[#DFBE7B] animate-bounce">arrow_downward</span>
+            <span class="badge-text">Hover to Scroll</span>
+          </div>
+
+          <!-- Quick Action Hover Bar at Center Bottom -->
+          <div class="absolute bottom-3 inset-x-3 opacity-0 group-hover/screen:opacity-100 transition-opacity flex items-center justify-center gap-2 pointer-events-auto">
+            <button onclick="event.stopPropagation(); openDeviceModal('home4.html', 'Concept 4: Architectural Monograph')" class="bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">devices</span> Device Preview
+            </button>
+            <a href="home4.html" target="_blank" onclick="event.stopPropagation();" class="bg-[#B38A3E] hover:bg-[#974800] text-[#F7F1E3] text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">open_in_new</span> Full Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Concept Details Footer -->
+        <div class="p-5 flex flex-col justify-between flex-grow space-y-4 border-t border-[#B38A3E]/20 bg-[#FAF6EE]">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#1F4D3A] uppercase tracking-widest">Layered Drafting Box</span>
+              <div class="flex items-center gap-1">
+                <span class="w-3 h-3 rounded-full bg-[#FFF8F4] border border-[#B38A3E]/40" title="Surface #FFF8F4"></span>
+                <span class="w-3 h-3 rounded-full bg-[#1F4D3A]" title="Primary #1F4D3A"></span>
+                <span class="w-3 h-3 rounded-full bg-[#D4C5A9]" title="Brass Hairline #D4C5A9"></span>
+                <span class="w-3 h-3 rounded-full bg-[#703400]" title="Deep Amber #703400"></span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl text-[#1F4D3A] font-semibold leading-tight">
+              Architectural Monograph &amp; Overlap
+            </h3>
+
+            <p class="text-xs text-[#2E2924]/80 leading-relaxed">
+              Modern spatial studio aesthetic featuring an overlapping parchment editorial box, courtyard mandala badge, and hairline drafting guides.
+            </p>
+          </div>
+
+          <!-- Tags & Action Bar -->
+          <div class="pt-2 border-t border-[#B38A3E]/15 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-[#2E2924]/60 font-mono">Layered Depth • Studio Feel</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setCompareLeft('home4.html', 'Concept 4')" class="text-xs text-[#1F4D3A] hover:text-[#B38A3E] font-semibold px-2 py-1 rounded border border-[#B38A3E]/30 hover:border-[#B38A3E] transition-colors" title="Add to comparison">
+                ⚖ Compare
+              </button>
+              <a href="home4.html" class="text-xs bg-[#1F4D3A] hover:bg-[#0E291F] text-[#F7F1E3] font-semibold px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                Explore <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= CONCEPT 5 ================= -->
+      <article id="concept-5" class="concept-card flex flex-col bg-[#0A1F18] rounded-xl border border-[#C5A059]/40 shadow-xl overflow-hidden group">
+        <!-- Mockup Browser Header (Dark Luxury) -->
+        <div class="px-4 py-2.5 bg-[#05130E] border-b border-[#C5A059]/30 flex items-center justify-between gap-2 select-none">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-full bg-[#E05A47] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#E5B53B] inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-[#57B855] inline-block"></span>
+          </div>
+          <div class="flex-grow max-w-[210px] bg-[#0D261E] border border-[#C5A059]/25 rounded-md px-2.5 py-0.5 text-[11px] text-[#DFBE7B]/80 font-mono truncate text-center flex items-center justify-center gap-1">
+            <span class="material-symbols-outlined text-[11px] text-[#C5A059]">lock</span> anukulclinic.com/concept-5
+          </div>
+          <span class="text-[11px] font-bold text-[#DFBE7B] uppercase tracking-wider">Concept 05</span>
+        </div>
+
+        <!-- Preview Viewport with Hover-to-Scroll -->
+        <div class="preview-viewport relative group/screen bg-[#081B15]" onclick="openDeviceModal('home5.html', 'Concept 5: Luxury Nocturnal Gold')">
+          <div class="iframe-scaler" data-src="home5.html">
+            <iframe src="home5.html" class="w-full h-full border-none" tabindex="-1" loading="lazy"></iframe>
+          </div>
+
+          <!-- Hover Overlay Indicators -->
+          <div class="absolute inset-0 bg-transparent group-hover/screen:bg-[#C5A059]/5 transition-colors pointer-events-none"></div>
+
+          <!-- Dynamic Badge: Hover to Scroll / Progress -->
+          <div class="hover-scroll-badge absolute top-3 right-3 bg-[#05130E]/90 backdrop-blur-md text-[#DFBE7B] text-[11px] font-semibold px-2.5 py-1 rounded-full border border-[#C5A059]/50 flex items-center gap-1.5 shadow-sm transition-all pointer-events-none">
+            <span class="material-symbols-outlined text-xs text-[#DFBE7B] animate-bounce">arrow_downward</span>
+            <span class="badge-text">Hover to Scroll</span>
+          </div>
+
+          <!-- Quick Action Hover Bar at Center Bottom -->
+          <div class="absolute bottom-3 inset-x-3 opacity-0 group-hover/screen:opacity-100 transition-opacity flex items-center justify-center gap-2 pointer-events-auto">
+            <button onclick="event.stopPropagation(); openDeviceModal('home5.html', 'Concept 5: Luxury Nocturnal Gold')" class="bg-[#C5A059] hover:bg-[#DFBE7B] text-[#05130E] text-xs font-bold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">devices</span> Device Preview
+            </button>
+            <a href="home5.html" target="_blank" onclick="event.stopPropagation();" class="bg-[#15382D] hover:bg-[#1A4437] text-[#DFBE7B] border border-[#C5A059]/40 text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md flex items-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-xs">open_in_new</span> Full Page
+            </a>
+          </div>
+        </div>
+
+        <!-- Concept Details Footer (Dark Luxury Theme) -->
+        <div class="p-5 flex flex-col justify-between flex-grow space-y-4 border-t border-[#C5A059]/30 bg-[#081B15] text-[#F5EFEB]">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold text-[#DFBE7B] uppercase tracking-widest">Nocturnal Sanctuary</span>
+              <div class="flex items-center gap-1">
+                <span class="w-3 h-3 rounded-full bg-[#081B15] border border-[#C5A059]/40" title="Forest Black #081B15"></span>
+                <span class="w-3 h-3 rounded-full bg-[#C5A059]" title="Radiant Gold #C5A059"></span>
+                <span class="w-3 h-3 rounded-full bg-[#15382D]" title="Deep Forest #15382D"></span>
+                <span class="w-3 h-3 rounded-full bg-[#F5EFEB]" title="Ivory #F5EFEB"></span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl text-[#DFBE7B] font-semibold leading-tight">
+              Nocturnal Gold &amp; Deep Emerald
+            </h3>
+
+            <p class="text-xs text-[#D6CFC7] leading-relaxed">
+              Ultra-luxury dark theme with gleaming metallic gold typography, frosted emerald glass cards, and an enchanting nighttime wellness aura.
+            </p>
+          </div>
+
+          <!-- Tags & Action Bar -->
+          <div class="pt-2 border-t border-[#C5A059]/20 flex items-center justify-between gap-2">
+            <span class="text-[11px] text-[#A07E36] font-mono">Playfair Display • Dark Luxe</span>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setCompareLeft('home5.html', 'Concept 5')" class="text-xs text-[#DFBE7B] hover:text-white font-semibold px-2 py-1 rounded border border-[#C5A059]/40 hover:border-[#DFBE7B] transition-colors" title="Add to comparison">
+                ⚖ Compare
+              </button>
+              <a href="home5.html" class="text-xs bg-[#C5A059] hover:bg-[#DFBE7B] text-[#05130E] font-bold px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                Explore <span class="material-symbols-outlined text-xs">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ================= SUMMARY / COMPARISON CARD ================= -->
+      <article class="flex flex-col bg-gradient-to-br from-[#1F4D3A] to-[#0E291F] text-[#F7F1E3] rounded-xl border border-[#B38A3E]/40 shadow-md p-6 justify-between space-y-6">
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-xl bg-[#B38A3E]/20 border border-[#B38A3E]/40 flex items-center justify-center">
+            <span class="material-symbols-outlined text-2xl text-[#DFBE7B]">fact_check</span>
+          </div>
+
+          <h3 class="font-display text-2xl font-semibold leading-snug">
+            Need Help Choosing the Best Concept?
+          </h3>
+
+          <p class="text-xs text-[#E8D8BC]/85 leading-relaxed">
+            Every concept was built according to classical Indian Vastu Purusha principles &amp; authentic Ayurvedic consultation workflows. Use the side-by-side comparison tool to view two layouts simultaneously with synchronized scrolling.
+          </p>
+
+          <div class="space-y-2 pt-2 text-xs">
+            <div class="flex items-center gap-2 text-[#E8D8BC]">
+              <span class="material-symbols-outlined text-sm text-[#DFBE7B]">check_circle</span> Concepts 1–4: Warm Parchment &amp; Organic Linen
+            </div>
+            <div class="flex items-center gap-2 text-[#E8D8BC]">
+              <span class="material-symbols-outlined text-sm text-[#DFBE7B]">check_circle</span> Concept 5: Dark Emerald &amp; Metallic Gold
+            </div>
+            <div class="flex items-center gap-2 text-[#E8D8BC]">
+              <span class="material-symbols-outlined text-sm text-[#DFBE7B]">check_circle</span> Fully responsive across all modern devices
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-2 pt-4 border-t border-[#B38A3E]/30">
+          <button onclick="openCompareModal()" class="w-full bg-[#B38A3E] hover:bg-[#DFBE7B] text-[#0E291F] text-xs font-bold uppercase tracking-wider py-3 rounded-lg shadow-md transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">compare</span> Launch Dual Compare Mode
+          </button>
+          <button onclick="openDeviceModal('home1.html', 'Concept 1')" class="w-full bg-white/10 hover:bg-white/20 text-[#F7F1E3] border border-[#B38A3E]/30 text-xs font-semibold py-2.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">devices</span> Test Device Viewports
+          </button>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- ================= DEVICE SIMULATOR MODAL ================= -->
+  <div id="device-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md hidden flex flex-col items-center justify-center p-2 sm:p-4 transition-opacity">
+    
+    <!-- Modal Control Toolbar -->
+    <div class="w-full max-w-6xl bg-[#1F4D3A] text-[#F7F1E3] rounded-t-xl px-4 py-3 border border-[#B38A3E]/40 flex flex-wrap items-center justify-between gap-3 shadow-2xl">
+      
+      <!-- Current Concept Indicator & Switcher -->
+      <div class="flex items-center gap-3">
+        <span class="font-display font-semibold text-sm sm:text-base text-[#DFBE7B]" id="modal-concept-title">Concept 1</span>
+        <div class="flex items-center gap-1 bg-[#0E291F] px-1.5 py-1 rounded-lg border border-[#B38A3E]/30 text-xs">
+          <button onclick="switchModalConcept('home1.html', 'Concept 1')" class="modal-tab px-2 py-0.5 rounded text-xs font-semibold hover:bg-[#B38A3E]/30 transition-colors">1</button>
+          <button onclick="switchModalConcept('home2.html', 'Concept 2')" class="modal-tab px-2 py-0.5 rounded text-xs font-semibold hover:bg-[#B38A3E]/30 transition-colors">2</button>
+          <button onclick="switchModalConcept('home3.html', 'Concept 3')" class="modal-tab px-2 py-0.5 rounded text-xs font-semibold hover:bg-[#B38A3E]/30 transition-colors">3</button>
+          <button onclick="switchModalConcept('home4.html', 'Concept 4')" class="modal-tab px-2 py-0.5 rounded text-xs font-semibold hover:bg-[#B38A3E]/30 transition-colors">4</button>
+          <button onclick="switchModalConcept('home5.html', 'Concept 5')" class="modal-tab px-2 py-0.5 rounded text-xs font-semibold hover:bg-[#B38A3E]/30 transition-colors">5</button>
+        </div>
+      </div>
+
+      <!-- Viewport Device Switcher -->
+      <div class="flex items-center gap-1 bg-[#0E291F] p-1 rounded-lg border border-[#B38A3E]/30">
+        <button onclick="setModalViewport('desktop')" id="vp-desktop" class="vp-btn px-2.5 py-1 rounded text-xs font-semibold bg-[#B38A3E] text-[#0E291F] flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">desktop_windows</span> <span class="hidden sm:inline">Desktop (1440)</span>
+        </button>
+        <button onclick="setModalViewport('laptop')" id="vp-laptop" class="vp-btn px-2.5 py-1 rounded text-xs font-semibold text-[#F7F1E3] hover:bg-white/10 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">laptop_mac</span> <span class="hidden sm:inline">Laptop (1024)</span>
+        </button>
+        <button onclick="setModalViewport('tablet')" id="vp-tablet" class="vp-btn px-2.5 py-1 rounded text-xs font-semibold text-[#F7F1E3] hover:bg-white/10 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">tablet_mac</span> <span class="hidden sm:inline">Tablet (768)</span>
+        </button>
+        <button onclick="setModalViewport('mobile')" id="vp-mobile" class="vp-btn px-2.5 py-1 rounded text-xs font-semibold text-[#F7F1E3] hover:bg-white/10 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">smartphone</span> <span class="hidden sm:inline">Mobile (390)</span>
+        </button>
+      </div>
+
+      <!-- Right Controls: Auto-Scroll, External, Close -->
+      <div class="flex items-center gap-2">
+        <button id="modal-auto-scroll-btn" onclick="toggleModalAutoScroll()" class="text-xs bg-[#B38A3E]/20 hover:bg-[#B38A3E]/40 border border-[#B38A3E]/50 text-[#DFBE7B] px-2.5 py-1 rounded-lg flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">play_arrow</span> Auto-Scroll
+        </button>
+        <a id="modal-open-external" href="home1.html" target="_blank" class="text-xs text-[#E8D8BC] hover:text-white p-1" title="Open full page in new tab">
+          <span class="material-symbols-outlined text-base">open_in_new</span>
+        </a>
+        <button onclick="closeDeviceModal()" class="text-[#E8D8BC] hover:text-white p-1 rounded-full hover:bg-white/10" title="Close Preview">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Modal Device Body -->
+    <div class="w-full max-w-6xl flex-grow bg-[#141E19] rounded-b-xl border-x border-b border-[#B38A3E]/40 flex items-center justify-center p-3 sm:p-6 overflow-hidden relative">
+      <div id="device-wrapper" class="device-screen-wrapper relative h-[78vh] bg-white rounded-lg overflow-hidden shadow-2xl border-4 border-[#2A3F33] w-full max-w-full">
+        <iframe id="modal-iframe" src="about:blank" class="w-full h-full border-none"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= SIDE-BY-SIDE COMPARISON MODAL ================= -->
+  <div id="compare-modal" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md hidden flex flex-col p-2 sm:p-4 transition-opacity">
+    
+    <!-- Compare Toolbar -->
+    <div class="w-full bg-[#1F4D3A] text-[#F7F1E3] rounded-t-xl px-4 py-3 border border-[#B38A3E]/40 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-[#DFBE7B]">compare</span>
+        <span class="font-display font-semibold text-base">Dual Concept Side-by-Side Comparison</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-semibold">
+        <!-- Select Left -->
+        <div class="flex items-center gap-1">
+          <span class="text-[#DFBE7B]">Left:</span>
+          <select id="compare-select-left" onchange="updateCompareLeft(this.value)" class="bg-[#0E291F] border border-[#B38A3E]/40 text-[#F7F1E3] rounded px-2 py-1 outline-none">
+            <option value="home1.html" selected>Concept 1 (Architectural Grid)</option>
+            <option value="home2.html">Concept 2 (Centered Sanctuary)</option>
+            <option value="home3.html">Concept 3 (Monastic Balance)</option>
+            <option value="home4.html">Concept 4 (Overlapping Monograph)</option>
+            <option value="home5.html">Concept 5 (Nocturnal Gold)</option>
+          </select>
+        </div>
+
+        <!-- Select Right -->
+        <div class="flex items-center gap-1">
+          <span class="text-[#DFBE7B]">Right:</span>
+          <select id="compare-select-right" onchange="updateCompareRight(this.value)" class="bg-[#0E291F] border border-[#B38A3E]/40 text-[#F7F1E3] rounded px-2 py-1 outline-none">
+            <option value="home1.html">Concept 1 (Architectural Grid)</option>
+            <option value="home2.html">Concept 2 (Centered Sanctuary)</option>
+            <option value="home3.html">Concept 3 (Monastic Balance)</option>
+            <option value="home4.html">Concept 4 (Overlapping Monograph)</option>
+            <option value="home5.html" selected>Concept 5 (Nocturnal Gold)</option>
+          </select>
+        </div>
+
+        <button onclick="toggleSyncScroll()" id="sync-scroll-btn" class="bg-[#B38A3E]/20 hover:bg-[#B38A3E]/40 border border-[#B38A3E]/50 text-[#DFBE7B] px-3 py-1 rounded flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">sync</span> Sync Scroll: OFF
+        </button>
+      </div>
+
+      <button onclick="closeCompareModal()" class="text-[#E8D8BC] hover:text-white p-1 rounded-full hover:bg-white/10">
+        <span class="material-symbols-outlined text-xl">close</span>
+      </button>
+    </div>
+
+    <!-- Dual Split Frames -->
+    <div class="w-full flex-grow bg-[#0E291F] rounded-b-xl border-x border-b border-[#B38A3E]/40 grid grid-cols-1 md:grid-cols-2 gap-2 p-2 overflow-hidden">
+      <!-- Left Frame -->
+      <div class="w-full h-full bg-white rounded-lg overflow-hidden border border-[#B38A3E]/30 relative">
+        <div class="absolute top-2 left-2 z-10 bg-[#1F4D3A]/90 text-[#DFBE7B] text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+          <span id="compare-label-left">Concept 1</span>
+        </div>
+        <iframe id="compare-iframe-left" src="home1.html" class="w-full h-full border-none"></iframe>
+      </div>
+
+      <!-- Right Frame -->
+      <div class="w-full h-full bg-white rounded-lg overflow-hidden border border-[#B38A3E]/30 relative">
+        <div class="absolute top-2 left-2 z-10 bg-[#1F4D3A]/90 text-[#DFBE7B] text-[11px] font-semibold px-2 py-0.5 rounded shadow">
+          <span id="compare-label-right">Concept 5</span>
+        </div>
+        <iframe id="compare-iframe-right" src="home5.html" class="w-full h-full border-none"></iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#1F4D3A] text-[#F7F1E3] border-t border-[#B38A3E]/30 mt-16">
+    <div class="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#E8D8BC]/80">
+      <div class="flex items-center gap-3">
+        <span class="font-display text-base font-semibold text-[#DFBE7B]">ANUKUL</span>
+        <span>• Ayur Vāstu Harmony Clinic — Client Review Portal</span>
+      </div>
+      <div>
+        Deployed &amp; Optimized for Vercel Static Hosting • 5 Complete Design Concepts
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // State variables
+    let currentSpeed = 1.0;
+    let isCursorScrubMode = false;
+    let modalAutoScrollInterval = null;
+    let syncScrollEnabled = false;
+
+    // Initialize Card Scaling and Smooth Scroll Coordinates
+    function initCardScaling() {
+      const cards = document.querySelectorAll('.concept-card');
+      const virtualWidth = 1440;
+      const virtualHeight = 5200; // estimated page height
+
+      cards.forEach(card => {
+        const viewport = card.querySelector('.preview-viewport');
+        const scaler = card.querySelector('.iframe-scaler');
+        const badge = card.querySelector('.hover-scroll-badge .badge-text');
+        if (!viewport || !scaler) return;
+
+        const viewportWidth = viewport.clientWidth || 380;
+        const viewportHeight = viewport.clientHeight || 420;
+        const scale = viewportWidth / virtualWidth;
+
+        scaler.style.setProperty('--card-scale', scale);
+        
+        // Max scroll calculation so page bottom lands cleanly inside viewport
+        const maxScrollVirtual = virtualHeight - (viewportHeight / scale);
+        const maxScrollY = -Math.max(maxScrollVirtual, 2400);
+        scaler.style.setProperty('--max-scroll-y', `${maxScrollY}px`);
+
+        // Set duration based on current speed setting
+        const scrollDuration = Math.round((8.5 / currentSpeed) * 10) / 10;
+        scaler.style.setProperty('--scroll-duration', `${scrollDuration}s`);
+        scaler.style.setProperty('--return-duration', `1.6s`);
+
+        // Update progress readout on hover
+        let animFrame;
+        viewport.onmouseenter = () => {
+          if (isCursorScrubMode) return;
+          const startTime = performance.now();
+          const durationMs = scrollDuration * 1000;
+
+          function trackProgress(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(Math.round((elapsed / durationMs) * 100), 100);
+            if (badge) badge.textContent = `Scroll: ${progress}%`;
+            if (progress < 100) {
+              animFrame = requestAnimationFrame(trackProgress);
+            }
+          }
+          animFrame = requestAnimationFrame(trackProgress);
+        };
+
+        viewport.onmouseleave = () => {
+          cancelAnimationFrame(animFrame);
+          if (badge) badge.textContent = 'Hover to Scroll';
+          if (isCursorScrubMode) {
+            scaler.style.transform = `scale(${scale}) translateY(0px)`;
+          }
+        };
+
+        // Cursor Scrub Mode Handler
+        viewport.onmousemove = (e) => {
+          if (!isCursorScrubMode) return;
+          const rect = viewport.getBoundingClientRect();
+          const relativeY = Math.min(Math.max((e.clientY - rect.top) / rect.height, 0), 1);
+          const targetY = relativeY * maxScrollY;
+          scaler.style.transform = `scale(${scale}) translateY(${targetY}px)`;
+          scaler.style.transition = 'transform 0.12s ease-out';
+          if (badge) badge.textContent = `Scroll: ${Math.round(relativeY * 100)}%`;
+        };
+      });
+    }
+
+    // Set Speed Multiplier
+    document.querySelectorAll('.speed-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.speed-btn').forEach(b => {
+          b.classList.remove('bg-[#1F4D3A]', 'text-[#F7F1E3]', 'shadow-sm');
+          b.classList.add('text-[#2E2924]/80');
+        });
+        btn.classList.add('bg-[#1F4D3A]', 'text-[#F7F1E3]', 'shadow-sm');
+        btn.classList.remove('text-[#2E2924]/80');
+
+        currentSpeed = parseFloat(btn.getAttribute('data-speed'));
+        initCardScaling();
+      });
+    });
+
+    // Toggle Auto-Glide vs Cursor Scrub Mode
+    const modeToggleBtn = document.getElementById('mode-toggle-btn');
+    modeToggleBtn.addEventListener('click', () => {
+      isCursorScrubMode = !isCursorScrubMode;
+      const cards = document.querySelectorAll('.concept-card');
+
+      if (isCursorScrubMode) {
+        cards.forEach(c => c.classList.add('manual-mode'));
+        modeToggleBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-[#B38A3E]">touch_app</span> Cursor-Track Mode';
+      } else {
+        cards.forEach(c => c.classList.remove('manual-mode'));
+        modeToggleBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-[#C66A22]">autorenew</span> Auto-Glide Mode';
+      }
+      initCardScaling();
+    });
+
+    // Layout Columns Switcher
+    function setLayoutColumns(colClass) {
+      const grid = document.getElementById('concepts-grid');
+      grid.className = `grid ${colClass} gap-8`;
+
+      // Update button highlights
+      ['col-3-btn', 'col-2-btn', 'col-1-btn'].forEach(id => {
+        const btn = document.getElementById(id);
+        btn.classList.remove('bg-[#1F4D3A]', 'text-[#F7F1E3]', 'shadow-xs');
+        btn.classList.add('bg-[#E8D8BC]/60', 'text-[#1F4D3A]');
+      });
+
+      if (colClass.includes('lg:grid-cols-3')) {
+        document.getElementById('col-3-btn').classList.add('bg-[#1F4D3A]', 'text-[#F7F1E3]');
+      } else if (colClass.includes('md:grid-cols-2')) {
+        document.getElementById('col-2-btn').classList.add('bg-[#1F4D3A]', 'text-[#F7F1E3]');
+      } else {
+        document.getElementById('col-1-btn').classList.add('bg-[#1F4D3A]', 'text-[#F7F1E3]');
+      }
+
+      // Recompute scaling after CSS reflow
+      setTimeout(initCardScaling, 350);
+    }
+
+    // Quick Jump to Card
+    function jumpToConcept(cardId) {
+      if (!cardId) return;
+      const el = document.getElementById(cardId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('ring-4', 'ring-[#B38A3E]');
+        setTimeout(() => el.classList.remove('ring-4', 'ring-[#B38A3E]'), 2000);
+      }
+    }
+
+    // ================= DEVICE SIMULATOR MODAL LOGIC =================
+    const deviceModal = document.getElementById('device-modal');
+    const modalIframe = document.getElementById('modal-iframe');
+    const modalConceptTitle = document.getElementById('modal-concept-title');
+    const modalOpenExternal = document.getElementById('modal-open-external');
+    const deviceWrapper = document.getElementById('device-wrapper');
+
+    function openDeviceModal(url, title) {
+      modalConceptTitle.textContent = title;
+      modalIframe.src = url;
+      modalOpenExternal.href = url;
+      deviceModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      setModalViewport('desktop');
+    }
+
+    function closeDeviceModal() {
+      deviceModal.classList.add('hidden');
+      modalIframe.src = 'about:blank';
+      document.body.style.overflow = '';
+      if (modalAutoScrollInterval) clearInterval(modalAutoScrollInterval);
+    }
+
+    function switchModalConcept(url, title) {
+      modalConceptTitle.textContent = title;
+      modalIframe.src = url;
+      modalOpenExternal.href = url;
+    }
+
+    function setModalViewport(type) {
+      // Highlight active button
+      ['desktop', 'laptop', 'tablet', 'mobile'].forEach(t => {
+        const btn = document.getElementById(`vp-${t}`);
+        if (t === type) {
+          btn.classList.add('bg-[#B38A3E]', 'text-[#0E291F]');
+          btn.classList.remove('text-[#F7F1E3]');
+        } else {
+          btn.classList.remove('bg-[#B38A3E]', 'text-[#0E291F]');
+          btn.classList.add('text-[#F7F1E3]');
+        }
+      });
+
+      if (type === 'desktop') {
+        deviceWrapper.style.width = '100%';
+        deviceWrapper.style.maxWidth = '1440px';
+      } else if (type === 'laptop') {
+        deviceWrapper.style.width = '1024px';
+        deviceWrapper.style.maxWidth = '1024px';
+      } else if (type === 'tablet') {
+        deviceWrapper.style.width = '768px';
+        deviceWrapper.style.maxWidth = '768px';
+      } else if (type === 'mobile') {
+        deviceWrapper.style.width = '390px';
+        deviceWrapper.style.maxWidth = '390px';
+      }
+    }
+
+    function toggleModalAutoScroll() {
+      const btn = document.getElementById('modal-auto-scroll-btn');
+      if (modalAutoScrollInterval) {
+        clearInterval(modalAutoScrollInterval);
+        modalAutoScrollInterval = null;
+        btn.innerHTML = '<span class="material-symbols-outlined text-sm">play_arrow</span> Auto-Scroll';
+        btn.classList.remove('bg-[#B38A3E]', 'text-[#0E291F]');
+      } else {
+        btn.innerHTML = '<span class="material-symbols-outlined text-sm">pause</span> Pause Scroll';
+        btn.classList.add('bg-[#B38A3E]', 'text-[#0E291F]');
+        
+        modalAutoScrollInterval = setInterval(() => {
+          try {
+            if (modalIframe.contentWindow) {
+              modalIframe.contentWindow.scrollBy({ top: 3, behavior: 'smooth' });
+            }
+          } catch(e) {}
+        }, 16);
+      }
+    }
+
+    // ================= DUAL COMPARE MODAL LOGIC =================
+    const compareModal = document.getElementById('compare-modal');
+    const compareIframeLeft = document.getElementById('compare-iframe-left');
+    const compareIframeRight = document.getElementById('compare-iframe-right');
+
+    function openCompareModal() {
+      compareModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCompareModal() {
+      compareModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function setCompareLeft(url, label) {
+      document.getElementById('compare-select-left').value = url;
+      updateCompareLeft(url);
+      openCompareModal();
+    }
+
+    function updateCompareLeft(url) {
+      compareIframeLeft.src = url;
+      const sel = document.getElementById('compare-select-left');
+      document.getElementById('compare-label-left').textContent = sel.options[sel.selectedIndex].text.split('(')[0].trim();
+    }
+
+    function updateCompareRight(url) {
+      compareIframeRight.src = url;
+      const sel = document.getElementById('compare-select-right');
+      document.getElementById('compare-label-right').textContent = sel.options[sel.selectedIndex].text.split('(')[0].trim();
+    }
+
+    function toggleSyncScroll() {
+      syncScrollEnabled = !syncScrollEnabled;
+      const btn = document.getElementById('sync-scroll-btn');
+      if (syncScrollEnabled) {
+        btn.innerHTML = '<span class="material-symbols-outlined text-sm">sync</span> Sync Scroll: ON';
+        btn.classList.add('bg-[#B38A3E]', 'text-[#0E291F]');
+        
+        // Listen to scroll events on left frame
+        try {
+          compareIframeLeft.contentWindow.onscroll = () => {
+            if (syncScrollEnabled) {
+              compareIframeRight.contentWindow.scrollTo(0, compareIframeLeft.contentWindow.scrollY);
+            }
+          };
+          compareIframeRight.contentWindow.onscroll = () => {
+            if (syncScrollEnabled) {
+              compareIframeLeft.contentWindow.scrollTo(0, compareIframeRight.contentWindow.scrollY);
+            }
+          };
+        } catch(e) {}
+      } else {
+        btn.innerHTML = '<span class="material-symbols-outlined text-sm">sync</span> Sync Scroll: OFF';
+        btn.classList.remove('bg-[#B38A3E]', 'text-[#0E291F]');
+      }
+    }
+
+    // ESC key closes modals
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDeviceModal();
+        closeCompareModal();
+      }
+    });
+
+    // Window resize event to recalculate card scales
+    window.addEventListener('resize', () => {
+      initCardScaling();
+    });
+
+    // Run on initial load
+    window.addEventListener('DOMContentLoaded', () => {
+      initCardScaling();
+    });
+  </script>
+</body>
+</html>

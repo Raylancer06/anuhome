@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<title>Ayurveda — ANUKUL Ayur Vāstu Harmony Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "gold": {
+              "light": "#DFBE7B",
+              "DEFAULT": "#C5A059",
+              "dim": "#A07E36",
+              "dark": "#7C5F23"
+            },
+            "forest": {
+              "950": "#05130E",
+              "900": "#0A1F18",
+              "850": "#0D261E",
+              "800": "#112F25",
+              "750": "#15382D",
+              "700": "#1A4437",
+              "600": "#245746"
+            },
+            "ivory": {
+              "DEFAULT": "#F5EFEB",
+              "muted": "#D6CFC7",
+              "subtle": "#9E978F"
+            },
+            "emerald-border": "rgba(197, 160, 89, 0.18)",
+            "card-bg": "rgba(15, 38, 30, 0.72)",
+            "primary": "#C5A059",
+            "background": "#081B15"
+          },
+          fontFamily: {
+            "display": ["Playfair Display", "serif"],
+            "headline": ["Playfair Display", "serif"],
+            "body": ["Manrope", "sans-serif"],
+            "label": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #081B15;
+        color: #F5EFEB;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FDF7E7 0%, #DFBE7B 45%, #C5A059 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .pavilion-glow {
+      box-shadow: 0 0 60px -15px rgba(197, 160, 89, 0.15);
+    }
+    .gold-hairline {
+      border: 1px solid rgba(197, 160, 89, 0.22);
+    }
+    .arch-mask {
+      border-radius: 180px 180px 1rem 1rem;
+    }
+  </style>
+</head>
+<body class="bg-[#081B15] text-[#F5EFEB] font-body antialiased selection:bg-gold/30 selection:text-gold-light">
+<!-- Architectural Background Texture/Glow -->
+<div class="fixed inset-0 pointer-events-none z-0">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-gradient-to-b from-[#16382B]/35 via-[#0D261E]/15 to-transparent blur-3xl opacity-70"></div>
+<div class="absolute top-[40%] right-[-10%] w-[500px] h-[500px] bg-gold/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[20%] left-[-10%] w-[600px] h-[600px] bg-[#123326]/30 blur-[130px] rounded-full"></div>
+</div>
+<!-- Header -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#081B15]/85 backdrop-blur-xl border-b border-gold/15 transition-all">
+<div class="h-20 max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+<!-- Logo Branding -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="ANUKUL Ayur Vastu Harmony Clinic" class="h-10 sm:h-11 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-vzLomqZz4UWKjMuLCEh0xat2mjxrwEmmZbiEsbRArg9M5SGeG11aunOB_iZ6yV0tntTqbjOl8lwVoKg3sM8VrEVOE74jlIAAG8KG716Mb8VIFZ7TWGXhRS0HXIU8ARYpt7gL_sJMXmHA_qcMPmGTTc_0DW0OCxJu1JXFo6NLW-jSkcDlTXRbJS5uMiM3Fpz1i0aOYOMmKQTJzEqbMsnZ3dDejeIJ5bQXDwLlsnPk"/>
+</a>
+<!-- Desktop Navigation -->
+<nav class="hidden xl:flex items-center gap-8">
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="home" href="#">Home</a>
+<a aria-current="page" class="text-sm font-medium text-gold font-display italic tracking-wide relative after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-[2px] after:bg-gold after:rounded-full" data-path="ayurveda" href="#">Ayurveda</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="vastu" href="#">Vastu</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="services" href="#">Services</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="shop" href="#">Shop</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="blog" href="#">Blog</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="gallery" href="#">Gallery</a>
+<a class="text-sm font-medium text-ivory-muted hover:text-gold transition-colors tracking-wide" data-path="contact" href="#">Contact</a>
+</nav>
+<!-- Utility Actions -->
+<div class="flex items-center gap-4">
+<button aria-label="Search Archive" class="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-ivory-muted hover:text-gold hover:bg-[#122E24]/60 border border-gold/15 transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">search</span>
+</button>
+<button aria-label="Language Preference" class="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-ivory-muted hover:text-gold hover:bg-[#122E24]/60 border border-gold/15 transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">translate</span>
+</button>
+<a class="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-gold via-gold-light to-gold text-[#081B15] font-label font-semibold text-xs tracking-wider uppercase rounded-md hover:brightness-110 shadow-[0_2px_14px_rgba(197,160,89,0.25)] transition-all" data-path="booking" href="#consultation-paths">
+          Book Consultation
+        </a>
+<div class="w-9 h-9 rounded-full bg-[#122E24] border border-gold/25 flex items-center justify-center text-gold cursor-pointer hover:border-gold transition-colors">
+<span class="material-symbols-outlined text-[18px]">person</span>
+</div>
+</div>
+</div>
+</header>
+<main class="relative z-10 w-full pt-20">
+<div class="flex flex-col w-full">
+<!-- HERO SECTION: Centric Architectural Pavilion -->
+<section class="relative w-full overflow-hidden pt-14 pb-20 md:pt-20 md:pb-28 border-b border-gold/10">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<!-- Centered Pavilion Header -->
+<div class="text-center max-w-4xl mx-auto flex flex-col items-center space-y-5">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#102B21]/90 border border-gold/30 shadow-[0_0_15px_rgba(197,160,89,0.1)]">
+<span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+<span class="font-label text-[11px] font-semibold text-gold tracking-[0.2em] uppercase">Classical Ayurveda — Clinical Individuality</span>
+</div>
+<h1 class="font-display text-4xl sm:text-5xl lg:text-[62px] leading-[1.12] tracking-tight text-ivory">
+              Biological Precision <span class="italic font-light gold-gradient-text">Rooted in Ancient Science.</span>
+</h1>
+<p class="font-body text-base sm:text-lg text-ivory-muted/90 max-w-2xl leading-relaxed font-light">
+              Ayurveda at ANUKUL transcends generic wellness. We decode your Prakriti (inherent constitution), Vikriti (active imbalances), Agni (digestive fire), and circadian biology to craft cellular restoration.
+            </p>
+<div class="pt-2 flex flex-wrap items-center justify-center gap-4">
+<a class="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-gold via-gold-light to-gold text-[#081B15] font-semibold text-xs uppercase tracking-wider rounded hover:brightness-110 shadow-[0_4px_20px_rgba(197,160,89,0.3)] transition-all" href="#consultation-paths">
+                Book Ayurvedic Consultation
+              </a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 bg-[#0D261E]/80 border border-gold/30 text-ivory hover:text-gold hover:border-gold text-xs uppercase tracking-wider rounded transition-all backdrop-blur-sm" href="#diagnostic-steps">
+                Explore Diagnostic Framework
+              </a>
+</div>
+</div>
+<!-- Architectural Centerpiece Arch / Image Composite -->
+<div class="mt-12 md:mt-16 max-w-4xl mx-auto relative">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-2xl md:rounded-3xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.6)] pavilion-glow bg-[#0A1F18]">
+<img class="w-full h-full object-cover object-center" data-alt="Serene Ayurvedic clinical setting with a brass apothecary vessel, stone mortar pestle with fresh green medicinal herbs, soft warm natural diffused sunlight casting geometric shadows through clean timber lattice blinds, muted ivory, dark forest teal accents and antique gold hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDck78tGF91QZdqw2OHiBQfShuKmV_fGZ2FWSPWJT0tGFm4eqHP-WDOUV0ev0yLogf-XIN5Pie9fTa--ZJeawRR61tbGT2G2kTlmsuRcNzO3ms7RXWopdY5NxMrmhz_IkpyQV6U3wgjD7PVmUSGzylx9dScI-3DF1Gnho9kHye6eOXroA1g6a1wXI_PDQOLeYYGMrrFcrB-vqw81pKQ8kWh5L6KmUnGbivEy8BhoWr"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#081B15] via-[#081B15]/30 to-transparent"></div>
+<!-- Floating Clinical Badge -->
+<div class="absolute bottom-5 left-5 right-5 sm:bottom-7 sm:left-7 sm:right-auto max-w-md p-4 sm:p-5 bg-[#0A1F18]/90 backdrop-blur-md rounded-xl border border-gold/30 shadow-2xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-[#143327] border border-gold/40 flex items-center justify-center shrink-0 text-gold">
+<span class="material-symbols-outlined text-[26px]">spa</span>
+</div>
+<div>
+<h4 class="font-display text-base sm:text-lg text-ivory font-medium">Prakriti &amp; Vikriti Matrix</h4>
+<p class="font-body text-xs text-ivory-muted mt-0.5">Individualized constitutional biology &amp; cellular telemetry</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Metric Ribbon -->
+<div class="mt-12 max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 p-5 rounded-xl bg-[#0D261E]/60 border border-gold/20 backdrop-blur-sm">
+<div class="text-center p-3 border-r border-gold/15 last:border-r-0">
+<span class="font-display text-2xl sm:text-3xl text-gold block">18+</span>
+<span class="font-label text-[11px] uppercase tracking-wider text-ivory-muted/80 mt-1 block">Years Clinical Practice</span>
+</div>
+<div class="text-center p-3 sm:border-r border-gold/15">
+<span class="font-display text-2xl sm:text-3xl text-gold block">Nāḍī</span>
+<span class="font-label text-[11px] uppercase tracking-wider text-ivory-muted/80 mt-1 block">Classical Pulse Analysis</span>
+</div>
+<div class="text-center p-3 border-r border-gold/15 last:border-r-0">
+<span class="font-display text-2xl sm:text-3xl text-gold block">Bespoke</span>
+<span class="font-label text-[11px] uppercase tracking-wider text-ivory-muted/80 mt-1 block">Herbal Formulations</span>
+</div>
+<div class="text-center p-3">
+<span class="font-display text-2xl sm:text-3xl text-gold block">100%</span>
+<span class="font-label text-[11px] uppercase tracking-wider text-ivory-muted/80 mt-1 block">Evidence-Grounded Care</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: The Tridosha Diagnostic Architecture -->
+<section class="w-full bg-[#0A1F18] py-20 lg:py-28 border-b border-gold/10 relative">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+<span class="font-label text-xs uppercase tracking-[0.25em] text-gold font-semibold">Tri-Dosha Matrix</span>
+<h2 class="font-display text-3xl sm:text-4xl lg:text-[44px] text-ivory tracking-tight">
+              The Tridosha Diagnostic Architecture
+            </h2>
+<div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-2 mb-3"></div>
+<p class="font-body text-base text-ivory-muted leading-relaxed font-light">
+              Ayurvedic physiology views cellular vitality as an interconnected equilibrium of three foundational biological intelligences. We do not suppress symptoms; we recalibrate the elemental continuum.
+            </p>
+</div>
+<!-- 3 Pillar Dosha Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<!-- VATA -->
+<div class="flex flex-col bg-[#0E281F]/80 backdrop-blur-sm rounded-2xl p-7 lg:p-8 border border-gold/25 hover:border-gold/60 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all group">
+<div class="flex justify-between items-start mb-6 pb-5 border-b border-gold/15">
+<div>
+<span class="font-label text-[11px] text-gold uppercase tracking-[0.2em] font-semibold block mb-1">Kinetic &amp; Neural</span>
+<h3 class="font-display text-3xl text-ivory group-hover:text-gold transition-colors">Vāta</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-[#14382B] border border-gold/30 flex items-center justify-center text-gold group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">air</span>
+</div>
+</div>
+<div class="space-y-6 flex-1 flex flex-col justify-between">
+<p class="font-body text-sm text-ivory-muted leading-relaxed">
+                  The supreme principle of kinetic motion, cellular communication, breath, sensory perception, and nervous coordination. Governed by Ether (Akasha) and Air (Vayu).
+                </p>
+<!-- Elemental Distribution -->
+<div class="p-4 bg-[#081B15]/70 rounded-xl border border-gold/15 space-y-2.5">
+<span class="font-label text-xs text-gold uppercase tracking-wider block font-medium">Elemental Composition</span>
+<div class="w-full bg-[#122E24] rounded-full h-2 overflow-hidden flex">
+<div class="bg-gold-dim h-full w-[45%]" title="Ether (45%)"></div>
+<div class="bg-gold h-full w-[55%]" title="Air (55%)"></div>
+</div>
+<div class="flex justify-between text-[11px] text-ivory-subtle font-label tracking-wide">
+<span>Ether (45%)</span>
+<span class="text-gold-light">Air (55%)</span>
+</div>
+</div>
+<div class="space-y-2 pt-2 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-ivory font-semibold block">Clinical Imbalance Signs</span>
+<ul class="font-body text-xs text-ivory-muted space-y-2">
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Insomnia, irregular digestion, sensory depletion</li>
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Joint crepitation, anxiety, micro-circulation spasms</li>
+</ul>
+</div>
+<div class="space-y-1.5 pt-3 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-gold font-semibold block">ANUKUL Therapeutic Protocol</span>
+<p class="font-body text-xs text-ivory-muted leading-relaxed">
+                    Warm unctuous lipids (Snehana), deep nervous grounding, rhythmic circadian stabilization, and root-herb tonics.
+                  </p>
+</div>
+</div>
+</div>
+<!-- PITTA -->
+<div class="flex flex-col bg-[#0E281F]/80 backdrop-blur-sm rounded-2xl p-7 lg:p-8 border border-gold/25 hover:border-gold/60 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all group">
+<div class="flex justify-between items-start mb-6 pb-5 border-b border-gold/15">
+<div>
+<span class="font-label text-[11px] text-gold uppercase tracking-[0.2em] font-semibold block mb-1">Metabolic &amp; Thermal</span>
+<h3 class="font-display text-3xl text-ivory group-hover:text-gold transition-colors">Pitta</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-[#14382B] border border-gold/30 flex items-center justify-center text-gold group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">local_fire_department</span>
+</div>
+</div>
+<div class="space-y-6 flex-1 flex flex-col justify-between">
+<p class="font-body text-sm text-ivory-muted leading-relaxed">
+                  The catalytic intelligence responsible for enzymatic transformation, gastric hydrochloric digestion, endocrine synthesis, and cognitive discrimination. Governed by Fire (Tejas) and Water (Jala).
+                </p>
+<!-- Elemental Distribution -->
+<div class="p-4 bg-[#081B15]/70 rounded-xl border border-gold/15 space-y-2.5">
+<span class="font-label text-xs text-gold uppercase tracking-wider block font-medium">Elemental Composition</span>
+<div class="w-full bg-[#122E24] rounded-full h-2 overflow-hidden flex">
+<div class="bg-gold h-full w-[70%]" title="Fire (70%)"></div>
+<div class="bg-gold-dim h-full w-[30%]" title="Water (30%)"></div>
+</div>
+<div class="flex justify-between text-[11px] text-ivory-subtle font-label tracking-wide">
+<span class="text-gold-light">Fire (70%)</span>
+<span>Water (30%)</span>
+</div>
+</div>
+<div class="space-y-2 pt-2 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-ivory font-semibold block">Clinical Imbalance Signs</span>
+<ul class="font-body text-xs text-ivory-muted space-y-2">
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Acid peptic flares, skin erythema, liver heat</li>
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Hypertension, hyper-irritability, systemic inflammation</li>
+</ul>
+</div>
+<div class="space-y-1.5 pt-3 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-gold font-semibold block">ANUKUL Therapeutic Protocol</span>
+<p class="font-body text-xs text-ivory-muted leading-relaxed">
+                    Sheetali cooling therapies, hepatic decongestion, bitter and astringent botanicals, thermal dissipation regimens.
+                  </p>
+</div>
+</div>
+</div>
+<!-- KAPHA -->
+<div class="flex flex-col bg-[#0E281F]/80 backdrop-blur-sm rounded-2xl p-7 lg:p-8 border border-gold/25 hover:border-gold/60 shadow-[0_10px_30px_rgba(0,0,0,0.35)] transition-all group">
+<div class="flex justify-between items-start mb-6 pb-5 border-b border-gold/15">
+<div>
+<span class="font-label text-[11px] text-gold uppercase tracking-[0.2em] font-semibold block mb-1">Structural &amp; Cohesive</span>
+<h3 class="font-display text-3xl text-ivory group-hover:text-gold transition-colors">Kapha</h3>
+</div>
+<div class="w-12 h-12 rounded-xl bg-[#14382B] border border-gold/30 flex items-center justify-center text-gold group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">water_drop</span>
+</div>
+</div>
+<div class="space-y-6 flex-1 flex flex-col justify-between">
+<p class="font-body text-sm text-ivory-muted leading-relaxed">
+                  The somatic architect of biological cohesion, synovial lubrication, deep cellular immunity (Ojas), and tissue anabolism. Governed by Earth (Prithvi) and Water (Jala).
+                </p>
+<!-- Elemental Distribution -->
+<div class="p-4 bg-[#081B15]/70 rounded-xl border border-gold/15 space-y-2.5">
+<span class="font-label text-xs text-gold uppercase tracking-wider block font-medium">Elemental Composition</span>
+<div class="w-full bg-[#122E24] rounded-full h-2 overflow-hidden flex">
+<div class="bg-gold h-full w-[60%]" title="Water (60%)"></div>
+<div class="bg-gold-dark h-full w-[40%]" title="Earth (40%)"></div>
+</div>
+<div class="flex justify-between text-[11px] text-ivory-subtle font-label tracking-wide">
+<span class="text-gold-light">Water (60%)</span>
+<span>Earth (40%)</span>
+</div>
+</div>
+<div class="space-y-2 pt-2 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-ivory font-semibold block">Clinical Imbalance Signs</span>
+<ul class="font-body text-xs text-ivory-muted space-y-2">
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Lymphatic stasis, insulin resistance, heavy lethargy</li>
+<li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-gold mt-1 shrink-0"></span> Mucoid excess, metabolic sluggishness, fluid retention</li>
+</ul>
+</div>
+<div class="space-y-1.5 pt-3 border-t border-gold/10">
+<span class="font-label text-xs uppercase tracking-wider text-gold font-semibold block">ANUKUL Therapeutic Protocol</span>
+<p class="font-body text-xs text-ivory-muted leading-relaxed">
+                    Invigorating dry herb friction (Udvartana), metabolic kindling (Deepana-Pachana), and thermogenic botanical catalysts.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Clinical Methodology & Diagnostic Steps -->
+<section class="w-full bg-[#081B15] py-20 lg:py-28 border-b border-gold/10" id="diagnostic-steps">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl space-y-3">
+<span class="font-label text-xs uppercase tracking-[0.25em] text-gold font-semibold">Diagnostic Rigor</span>
+<h2 class="font-display text-3xl sm:text-4xl lg:text-[44px] text-ivory tracking-tight">
+                The 5-Phase Clinical Pathway
+              </h2>
+<p class="font-body text-base text-ivory-muted leading-relaxed font-light">
+                From radial pulse assessment to seasonal biological alignment, our diagnostic pipeline harmonizes historical Vedic diagnostics with objective physiological telemetry.
+              </p>
+</div>
+<div>
+<span class="inline-flex items-center gap-2 font-label text-xs text-gold bg-[#0E281F] border border-gold/30 px-5 py-2.5 rounded-full uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+                Non-Invasive · Systematic · Person-Centric
+              </span>
+</div>
+</div>
+<!-- Step-by-Step Flow Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
+<!-- Step 1 -->
+<div class="flex flex-col bg-[#0D261E]/75 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-all group relative">
+<div class="w-11 h-11 rounded-xl bg-[#14382B] text-gold border border-gold/35 flex items-center justify-center font-display text-lg mb-5 group-hover:scale-105 transition-transform">
+                1
+              </div>
+<span class="font-label text-[10px] text-gold uppercase tracking-[0.2em] font-semibold mb-1">Assessment</span>
+<h4 class="font-display text-xl text-ivory mb-2.5 group-hover:text-gold transition-colors">Nāḍī Parīkṣā</h4>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                Multi-depth radial arterial pulse evaluation diagnosing organ reserve, Sub-doshas, subtle tissue toxicities (Ama), and neurological tone.
+              </p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col bg-[#0D261E]/75 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-all group relative">
+<div class="w-11 h-11 rounded-xl bg-[#14382B] text-gold border border-gold/35 flex items-center justify-center font-display text-lg mb-5 group-hover:scale-105 transition-transform">
+                2
+              </div>
+<span class="font-label text-[10px] text-gold uppercase tracking-[0.2em] font-semibold mb-1">Physiology</span>
+<h4 class="font-display text-xl text-ivory mb-2.5 group-hover:text-gold transition-colors">Dhātu &amp; Agni</h4>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                Scrutiny of the 7 vital tissue layers (Rasa to Shukra) and the 4 functional expressions of gastric/cellular metabolic fires.
+              </p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col bg-[#0D261E]/75 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-all group relative">
+<div class="w-11 h-11 rounded-xl bg-[#14382B] text-gold border border-gold/35 flex items-center justify-center font-display text-lg mb-5 group-hover:scale-105 transition-transform">
+                3
+              </div>
+<span class="font-label text-[10px] text-gold uppercase tracking-[0.2em] font-semibold mb-1">Rhythms</span>
+<h4 class="font-display text-xl text-ivory mb-2.5 group-hover:text-gold transition-colors">Chronobiology</h4>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                Structuring diurnal circadian cycles (Dinacharya) and seasonal transition protocols (Ritucharya) mapped to geographic biome.
+              </p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col bg-[#0D261E]/75 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-all group relative">
+<div class="w-11 h-11 rounded-xl bg-[#14382B] text-gold border border-gold/35 flex items-center justify-center font-display text-lg mb-5 group-hover:scale-105 transition-transform">
+                4
+              </div>
+<span class="font-label text-[10px] text-gold uppercase tracking-[0.2em] font-semibold mb-1">Purification</span>
+<h4 class="font-display text-xl text-ivory mb-2.5 group-hover:text-gold transition-colors">Śodhana &amp; Śamana</h4>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                Targeted cellular bio-purification, internal Ama neutralization, and gentle restorative tonification utilizing classical herbal preparations.
+              </p>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col bg-[#0D261E]/75 rounded-2xl p-6 border border-gold/20 hover:border-gold/50 transition-all group relative">
+<div class="w-11 h-11 rounded-xl bg-[#14382B] text-gold border border-gold/35 flex items-center justify-center font-display text-lg mb-5 group-hover:scale-105 transition-transform">
+                5
+              </div>
+<span class="font-label text-[10px] text-gold uppercase tracking-[0.2em] font-semibold mb-1">Sustenance</span>
+<h4 class="font-display text-xl text-ivory mb-2.5 group-hover:text-gold transition-colors">Āhāra as Medicine</h4>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                Therapeutic culinary blueprints tailored to bio-type, micro-biome constitution, seasonal weather, and individual digestive capacity.
+              </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: The ANUKUL Healthy Plate & Nutritional Medicine -->
+<section class="w-full bg-[#0A1F18] py-20 lg:py-28 border-b border-gold/10">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+<div class="lg:col-span-6 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#122E24] border border-gold/30">
+<span class="w-1.5 h-1.5 rounded-full bg-gold"></span>
+<span class="font-label text-[11px] text-gold uppercase tracking-[0.2em] font-semibold">Culinary Precision</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl lg:text-[44px] text-ivory tracking-tight leading-tight">
+                The ANUKUL Medicinal Plate: <span class="italic font-light gold-gradient-text">Food as Primary Pharmacology</span>
+</h2>
+<p class="font-body text-base text-ivory-muted leading-relaxed font-light">
+                Ayurveda teaches that without proper digestive fire (Agni), even the finest medicine turns to toxicity; with potent Agni, wholesome nourishment heals every cell. Our dietary architecture transforms daily dining into preventative medicine.
+              </p>
+<!-- Nutritional Distribution Metrics -->
+<div class="space-y-3.5 pt-2">
+<div class="p-4 bg-[#0E281F] rounded-xl border border-gold/20 flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<span class="w-3 h-3 rounded-full bg-gold shrink-0"></span>
+<div>
+<h5 class="font-display text-base text-ivory">1/2 Seasonal Vegetables &amp; Leafy Herbs</h5>
+<p class="font-body text-xs text-ivory-muted">Steam-cooked, spiced with cumin, fennel, and cold-pressed sesame oil</p>
+</div>
+</div>
+<span class="font-display text-2xl text-gold font-semibold shrink-0 ml-3">50%</span>
+</div>
+<div class="p-4 bg-[#0E281F] rounded-xl border border-gold/20 flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<span class="w-3 h-3 rounded-full bg-gold-light shrink-0"></span>
+<div>
+<h5 class="font-display text-base text-ivory">1/4 Complex Whole Grains</h5>
+<p class="font-body text-xs text-ivory-muted">Aged Basmati, Red Rice, Barley, or hand-threshed Quinoa</p>
+</div>
+</div>
+<span class="font-display text-2xl text-gold font-semibold shrink-0 ml-3">25%</span>
+</div>
+<div class="p-4 bg-[#0E281F] rounded-xl border border-gold/20 flex items-center justify-between">
+<div class="flex items-center gap-3.5">
+<span class="w-3 h-3 rounded-full bg-gold-dim shrink-0"></span>
+<div>
+<h5 class="font-display text-base text-ivory">1/4 Bio-available Protein &amp; Legumes</h5>
+<p class="font-body text-xs text-ivory-muted">Split yellow Moong dal, soaked seeds, cultured A2 curd or organic paneer</p>
+</div>
+</div>
+<span class="font-display text-2xl text-gold font-semibold shrink-0 ml-3">25%</span>
+</div>
+</div>
+<!-- Botanical Pharmacopeia Chips -->
+<div class="pt-2 space-y-2.5">
+<span class="font-label text-[11px] text-ivory-subtle uppercase tracking-[0.2em] font-semibold block">Signature Bio-Active Herbal Synergies</span>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-[#0D261E] border border-gold/25 rounded-md text-gold text-xs font-label">Aśwagandhā (Neuro-endocrine adaptogen)</span>
+<span class="px-3 py-1.5 bg-[#0D261E] border border-gold/25 rounded-md text-gold text-xs font-label">Brāhmī (Cerebral microcirculation)</span>
+<span class="px-3 py-1.5 bg-[#0D261E] border border-gold/25 rounded-md text-gold text-xs font-label">Guḍūcī (Immune modulation)</span>
+<span class="px-3 py-1.5 bg-[#0D261E] border border-gold/25 rounded-md text-gold text-xs font-label">Triphalā (Gentle peristalsis)</span>
+<span class="px-3 py-1.5 bg-[#0D261E] border border-gold/25 rounded-md text-gold text-xs font-label">Śatāvarī (Cellular hydration)</span>
+</div>
+</div>
+</div>
+<!-- Graphic / Image Platter -->
+<div class="lg:col-span-6 relative">
+<div class="w-full aspect-square rounded-2xl lg:rounded-3xl overflow-hidden border border-gold/30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-[#0D261E] relative pavilion-glow">
+<img class="w-full h-full object-cover" data-alt="Top down overhead flat-lay of an artistic Ayurvedic medicinal platter: perfectly segmented warm spiced seasonal vegetable curries in brass bowls, golden aged basmati rice, yellow moong dal soup, fresh coriander cilantro garnish, ceramic spoons on raw textured natural linen background in deep earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk4V60aWVYLKTX5YnphULHW_trQjDcDZCknAFYiPhdkzLUnmITON1y5JuB1n7CjRHiN7Lap6zDpaPgkFK8zLMTr7gKximID6H8QuWVRc8RlZ7kdTjMZoSHZIH90vG2-KREQ6NFPYE4h7_dXzuYR8jJNuPmDHaZ3g3BsaHoFFfgfiZO71tUo_4TQkl0gSiFQ0DGDDeGQw1E98OFHXjOjQUYFXErHbolWMBt_1JpPNjg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#081B15] via-[#081B15]/20 to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5 p-5 bg-[#0A1F18]/90 backdrop-blur-md rounded-xl border border-gold/30 shadow-xl">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-[#14382B] border border-gold/30 flex items-center justify-center shrink-0 text-gold">
+<span class="material-symbols-outlined text-[22px]">restaurant</span>
+</div>
+<div>
+<h4 class="font-display text-base text-ivory font-medium">Agni-Preserving Preparation</h4>
+<p class="font-body text-xs text-ivory-muted mt-1 leading-relaxed">
+                        All therapeutic food plans integrate A2 cultured Ghee, ginger, turmeric, and hing (asafoetida) to eliminate gas formation and maximize cellular bio-absorption.
+                      </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: Structured Consultation Programs -->
+<section class="w-full bg-[#081B15] py-20 lg:py-28 border-b border-gold/10" id="consultation-paths">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+<span class="font-label text-xs uppercase tracking-[0.25em] text-gold font-semibold">Targeted Clinical Protocols</span>
+<h2 class="font-display text-3xl sm:text-4xl lg:text-[44px] text-ivory tracking-tight">
+              Structured Consultation Programs
+            </h2>
+<div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-2 mb-3"></div>
+<p class="font-body text-base text-ivory-muted leading-relaxed font-light">
+              Comprehensive, evidence-collaborative clinical pathways built around specific pathology clusters. Available via in-sanctuary appointments or global telehealth.
+            </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Program 1 -->
+<div class="flex flex-col bg-[#0D261E]/80 backdrop-blur-sm rounded-2xl p-7 border border-gold/25 hover:border-gold/60 transition-all justify-between group shadow-lg">
+<div class="space-y-5">
+<div class="inline-flex items-center px-3 py-1 rounded bg-[#133226] border border-gold/30 text-gold font-label text-[10px] uppercase tracking-wider font-semibold">
+                  Digestion &amp; Microbiome
+                </div>
+<h3 class="font-display text-2xl text-ivory group-hover:text-gold transition-colors leading-snug">
+                  Gut Health &amp; Acid Reflux
+                </h3>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                  Systematic resolution for IBS, chronic hyperacidity, bloating, sluggish digestion, and compromised intestinal flora.
+                </p>
+<div class="space-y-2.5 pt-3 border-t border-gold/10">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Duration</span>
+<span class="text-ivory font-medium">8 Weeks</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Format</span>
+<span class="text-ivory font-medium">In-Clinic / Online</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Deliverables</span>
+<span class="text-gold font-medium">Dietary Chart &amp; Herbs</span>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<a class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-[#122E24] border border-gold/35 text-gold hover:bg-gold hover:text-[#081B15] text-xs font-label uppercase tracking-wider font-semibold rounded transition-all" href="#">
+                  View Program Details
+                </a>
+</div>
+</div>
+<!-- Program 2 -->
+<div class="flex flex-col bg-[#0D261E]/80 backdrop-blur-sm rounded-2xl p-7 border border-gold/25 hover:border-gold/60 transition-all justify-between group shadow-lg">
+<div class="space-y-5">
+<div class="inline-flex items-center px-3 py-1 rounded bg-[#133226] border border-gold/30 text-gold font-label text-[10px] uppercase tracking-wider font-semibold">
+                  Endocrine &amp; Energy
+                </div>
+<h3 class="font-display text-2xl text-ivory group-hover:text-gold transition-colors leading-snug">
+                  Metabolic Vitality &amp; Fatigue
+                </h3>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                  Recalibrating mitochondrial exhaustion, thyroid sluggishness, insulin resistance, and heavy post-meal lethargy.
+                </p>
+<div class="space-y-2.5 pt-3 border-t border-gold/10">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Duration</span>
+<span class="text-ivory font-medium">12 Weeks</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Format</span>
+<span class="text-ivory font-medium">Hybrid Format</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Deliverables</span>
+<span class="text-gold font-medium">Bio-purification Guide</span>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<a class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-[#122E24] border border-gold/35 text-gold hover:bg-gold hover:text-[#081B15] text-xs font-label uppercase tracking-wider font-semibold rounded transition-all" href="#">
+                  View Program Details
+                </a>
+</div>
+</div>
+<!-- Program 3 -->
+<div class="flex flex-col bg-[#0D261E]/80 backdrop-blur-sm rounded-2xl p-7 border border-gold/25 hover:border-gold/60 transition-all justify-between group shadow-lg">
+<div class="space-y-5">
+<div class="inline-flex items-center px-3 py-1 rounded bg-[#133226] border border-gold/30 text-gold font-label text-[10px] uppercase tracking-wider font-semibold">
+                  Vata &amp; Musculoskeletal
+                </div>
+<h3 class="font-display text-2xl text-ivory group-hover:text-gold transition-colors leading-snug">
+                  Joint Mobility &amp; Spinal Relief
+                </h3>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                  Deep tissue lubrication for arthritis, sciatica, chronic musculoskeletal stiffness, and nervous system degenerative dry states.
+                </p>
+<div class="space-y-2.5 pt-3 border-t border-gold/10">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Duration</span>
+<span class="text-ivory font-medium">6 to 10 Weeks</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Format</span>
+<span class="text-ivory font-medium">In-Clinic Exclusive</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Deliverables</span>
+<span class="text-gold font-medium">Kati Basti &amp; Potali Plan</span>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<a class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-[#122E24] border border-gold/35 text-gold hover:bg-gold hover:text-[#081B15] text-xs font-label uppercase tracking-wider font-semibold rounded transition-all" href="#">
+                  View Program Details
+                </a>
+</div>
+</div>
+<!-- Program 4 -->
+<div class="flex flex-col bg-[#0D261E]/80 backdrop-blur-sm rounded-2xl p-7 border border-gold/25 hover:border-gold/60 transition-all justify-between group shadow-lg">
+<div class="space-y-5">
+<div class="inline-flex items-center px-3 py-1 rounded bg-[#133226] border border-gold/30 text-gold font-label text-[10px] uppercase tracking-wider font-semibold">
+                  Neuro-Endocrine
+                </div>
+<h3 class="font-display text-2xl text-ivory group-hover:text-gold transition-colors leading-snug">
+                  Stress, Sleep &amp; Nervous Calm
+                </h3>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                  Restoring circadian delta rhythms, down-regulating hyperactive sympathetic nervous tone, and relieving cognitive burnout.
+                </p>
+<div class="space-y-2.5 pt-3 border-t border-gold/10">
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Duration</span>
+<span class="text-ivory font-medium">8 Weeks</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Format</span>
+<span class="text-ivory font-medium">In-Clinic / Online</span>
+</div>
+<div class="flex items-center justify-between text-xs">
+<span class="font-label text-ivory-subtle uppercase tracking-wider">Deliverables</span>
+<span class="text-gold font-medium">Medhya Rasayana &amp; Oils</span>
+</div>
+</div>
+</div>
+<div class="pt-6">
+<a class="w-full inline-flex items-center justify-center px-4 py-2.5 bg-[#122E24] border border-gold/35 text-gold hover:bg-gold hover:text-[#081B15] text-xs font-label uppercase tracking-wider font-semibold rounded transition-all" href="#">
+                  View Program Details
+                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: Frequently Addressed Questions -->
+<section class="w-full bg-[#0A1F18] py-20 lg:py-28 border-b border-gold/10">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+<div class="lg:col-span-4 space-y-6">
+<span class="font-label text-xs uppercase tracking-[0.25em] text-gold font-semibold">Inquiries &amp; Protocols</span>
+<h2 class="font-display text-3xl sm:text-4xl text-ivory tracking-tight">
+                Frequently Addressed Questions
+              </h2>
+<p class="font-body text-sm text-ivory-muted leading-relaxed font-light">
+                Our clinical practice adheres to transparent, honest, and scientifically compatible parameters. Here is how our consultation model operates.
+              </p>
+<div class="p-6 bg-[#0E281F] rounded-2xl border border-gold/25 shadow-lg space-y-3">
+<span class="font-label text-xs text-gold uppercase tracking-wider font-semibold block">Have a specific medical report?</span>
+<p class="font-body text-xs text-ivory-muted leading-relaxed font-light">
+                  We frequently review modern pathology workups (blood counts, thyroid profiles, endoscopies) during intake.
+                </p>
+<a class="inline-flex items-center gap-1.5 font-label text-xs text-gold font-semibold hover:text-gold-light transition-colors pt-1" href="#consultation-paths">
+                  Speak with a Clinic Coordinator <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-4">
+<!-- Accordion Card 1 -->
+<div class="bg-[#0E281F]/90 rounded-2xl p-6 border border-gold/20 shadow-md">
+<h4 class="font-display text-lg text-ivory mb-2 flex items-center justify-between cursor-pointer select-none group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="group-hover:text-gold transition-colors">How accurate is Nadi Pariksha (Pulse Assessment)?</span>
+<span class="material-symbols-outlined text-[20px] text-gold shrink-0 ml-3">expand_more</span>
+</h4>
+<div class="font-body text-xs text-ivory-muted pt-2 space-y-2 border-t border-gold/10 leading-relaxed font-light">
+<p>Nāḍī Parīkṣā is a profound classical diagnostic science practiced across millennia. Through tactile radial evaluation at superficial, intermediate, and deep physiological strata, an experienced Vaidya detects subtle organ stress, Ama accumulation, and hormonal fluctuations often before they manifest as macroscopic anatomical pathology.</p>
+</div>
+</div>
+<!-- Accordion Card 2 -->
+<div class="bg-[#0E281F]/90 rounded-2xl p-6 border border-gold/20 shadow-md">
+<h4 class="font-display text-lg text-ivory mb-2 flex items-center justify-between cursor-pointer select-none group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="group-hover:text-gold transition-colors">Can Ayurvedic treatments be integrated with allopathic prescriptions?</span>
+<span class="material-symbols-outlined text-[20px] text-gold shrink-0 ml-3">expand_more</span>
+</h4>
+<div class="font-body text-xs text-ivory-muted pt-2 space-y-2 border-t border-gold/10 leading-relaxed font-light">
+<p>Yes. ANUKUL operates on an evidence-collaborative paradigm. We do not abruptly advise discontinuation of critical allopathic therapies (such as antihypertensives, insulin, or thyroid medications). Our formulations are carefully screened to avoid herb-drug interactions, functioning synergistically to restore underlying tissue health.</p>
+</div>
+</div>
+<!-- Accordion Card 3 -->
+<div class="bg-[#0E281F]/90 rounded-2xl p-6 border border-gold/20 shadow-md">
+<h4 class="font-display text-lg text-ivory mb-2 flex items-center justify-between cursor-pointer select-none group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="group-hover:text-gold transition-colors">Is an Ayurvedic lifestyle feasible for busy professionals and urban living?</span>
+<span class="material-symbols-outlined text-[20px] text-gold shrink-0 ml-3">expand_more</span>
+</h4>
+<div class="font-body text-xs text-ivory-muted pt-2 space-y-2 border-t border-gold/10 leading-relaxed font-light">
+<p>Completely. We strictly avoid rigid or unrealistic dogmas. Our physicians craft realistic, micro-habit Dinacharya frameworks that fit seamlessly into busy modern schedules—focusing on meal timing, digestive tea protocols, simple posture grounding, and realistic home culinary substitutions.</p>
+</div>
+</div>
+<!-- Accordion Card 4 -->
+<div class="bg-[#0E281F]/90 rounded-2xl p-6 border border-gold/20 shadow-md">
+<h4 class="font-display text-lg text-ivory mb-2 flex items-center justify-between cursor-pointer select-none group" onclick="this.nextElementSibling.classList.toggle('hidden')">
+<span class="group-hover:text-gold transition-colors">How are herbal formulations verified for purity and safety?</span>
+<span class="material-symbols-outlined text-[20px] text-gold shrink-0 ml-3">expand_more</span>
+</h4>
+<div class="font-body text-xs text-ivory-muted pt-2 space-y-2 border-t border-gold/10 leading-relaxed font-light">
+<p>All herbal preparations dispensed or prescribed by ANUKUL undergo rigorous heavy-metal screening, microbial assay certification, and pesticide residue verification in accredited laboratories, strictly complying with classical pharmacopoeia benchmarks and contemporary international safety standards.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: Pre-Footer Pavilion CTA Banner -->
+<section class="w-full bg-[#081B15] py-20 lg:py-28">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="relative w-full rounded-3xl bg-gradient-to-br from-[#0E291F] via-[#091D16] to-[#06140F] p-8 sm:p-12 lg:p-16 overflow-hidden border border-gold/35 shadow-[0_25px_60px_rgba(0,0,0,0.6)] pavilion-glow">
+<!-- Ambient Architectural Ornamentation -->
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-16 -bottom-16 w-80 h-80 rounded-full bg-[#1A4437]/40 blur-3xl pointer-events-none"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/5 via-transparent to-transparent pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl space-y-5">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#122E24] border border-gold/30">
+<span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+<span class="font-label text-[11px] uppercase tracking-[0.2em] text-gold font-semibold">Sanctuary Consultations Open</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl lg:text-5xl text-ivory tracking-tight leading-tight">
+                Restore Your Inherent Balance.
+              </h2>
+<p class="font-body text-base sm:text-lg text-ivory-muted max-w-2xl leading-relaxed font-light">
+                Book an in-depth clinical consultation with ANUKUL Ayurvedic Physicians today. Experience healthcare designed not just for diseases, but for your distinct human constitution.
+              </p>
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<a class="inline-flex items-center justify-center px-7 py-3.5 bg-gradient-to-r from-gold via-gold-light to-gold text-[#081B15] font-semibold text-xs uppercase tracking-wider rounded hover:brightness-110 shadow-[0_4px_20px_rgba(197,160,89,0.3)] transition-all" href="#">
+                  Schedule Consultation
+                </a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 bg-[#0D261E] border border-gold/30 text-ivory hover:text-gold hover:border-gold text-xs uppercase tracking-wider rounded transition-all backdrop-blur-sm" href="#">
+                  Download Lifestyle Guide (PDF)
+                </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Identical to SCREEN_15 Dark Aesthetic) -->
+<footer class="w-full bg-[#05130E] text-ivory py-16 lg:py-24 border-t border-gold/15">
+<div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-16">
+<!-- Column 1: Brand Info -->
+<div class="lg:col-span-4 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="ANUKUL Ayur Vastu Harmony Clinic" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W-vzLomqZz4UWKjMuLCEh0xat2mjxrwEmmZbiEsbRArg9M5SGeG11aunOB_iZ6yV0tntTqbjOl8lwVoKg3sM8VrEVOE74jlIAAG8KG716Mb8VIFZ7TWGXhRS0HXIU8ARYpt7gL_sJMXmHA_qcMPmGTTc_0DW0OCxJu1JXFo6NLW-jSkcDlTXRbJS5uMiM3Fpz1i0aOYOMmKQTJzEqbMsnZ3dDejeIJ5bQXDwLlsnPk"/>
+</div>
+<p class="font-display italic text-base text-gold mt-2">Understand the Person. Understand the Space. Create Harmony.</p>
+<p class="font-body text-xs text-ivory-subtle leading-relaxed font-light max-w-sm">
+            Integrative synthesis of classical Ayurvedic physiology and proportional Vāstu Shastra architectural geometry.
+          </p>
+</div>
+<!-- Column 2: Explore -->
+<div class="lg:col-span-3 flex flex-col gap-2.5">
+<span class="font-label text-xs text-gold tracking-[0.2em] uppercase font-semibold mb-2">Explore</span>
+<ul class="flex flex-col gap-2 text-xs font-light text-ivory-muted">
+<li class="hover:text-gold transition-colors cursor-pointer">Home Grounding</li>
+<li class="hover:text-gold transition-colors cursor-pointer text-gold">Ayurveda Clinical Science</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Vastu Spatial Harmonization</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Medico-Vastu Diagnostics</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Health &amp; Geometry Library</li>
+</ul>
+</div>
+<!-- Column 3: Services -->
+<div class="lg:col-span-3 flex flex-col gap-2.5">
+<span class="font-label text-xs text-gold tracking-[0.2em] uppercase font-semibold mb-2">Services</span>
+<ul class="flex flex-col gap-2 text-xs font-light text-ivory-muted">
+<li class="hover:text-gold transition-colors cursor-pointer">Residential Vastu Alignment</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Commercial Spatial Audits</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Industrial Masterplanning</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Online Clinical Consultation</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Classical Panchakarma &amp; Regimens</li>
+</ul>
+</div>
+<!-- Column 4: Information -->
+<div class="lg:col-span-2 flex flex-col gap-2.5">
+<span class="font-label text-xs text-gold tracking-[0.2em] uppercase font-semibold mb-2">Information</span>
+<ul class="flex flex-col gap-2 text-xs font-light text-ivory-muted">
+<li class="hover:text-gold transition-colors cursor-pointer">Scholarly Journal</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Spatial Gallery</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Apothecary Shop</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Clinical FAQ</li>
+<li class="hover:text-gold transition-colors cursor-pointer">Sanctuary Contact</li>
+</ul>
+</div>
+</div>
+<!-- Ethical Notice Card -->
+<div class="p-6 rounded-xl bg-[#081B15] border border-gold/20 text-ivory-muted mb-12">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-gold text-[24px] shrink-0 mt-0.5">verified</span>
+<div>
+<span class="font-label text-xs uppercase tracking-wider text-gold block mb-1 font-semibold">Ethical Medical &amp; Spatial Notice</span>
+<p class="font-body text-xs text-ivory-subtle leading-relaxed font-light">
+              Medico-Vastu and Ayurveda provide complementary perspectives on human well-being and environment. Not intended to replace emergency medical treatment, licensed psychiatric intervention, or certified structural engineering certifications.
+            </p>
+</div>
+</div>
+</div>
+<!-- Bottom Legal Row -->
+<div class="pt-6 border-t border-gold/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-ivory-subtle">
+<p>© 2025 ANUKUL Ayur Vastu Harmony Clinic. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-gold transition-colors" href="#">Privacy Framework</a>
+<a class="hover:text-gold transition-colors" href="#">Terms of Spatial Care</a>
+<a class="hover:text-gold transition-colors" href="#">Clinical Scope</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="presentation-bar.js"></script>
+</body></html>
